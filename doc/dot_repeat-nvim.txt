@@ -82,14 +82,14 @@ Options passed to |dot_repeat-nvim.mk_cmd|.
 If the command needs to handle range or count, set `type` to `'range'` or `'count'`
 respectively.
 
-By default the mapping starts with `<CR>`, you can use `prefix` to change it to `:`
+By default the mapping starts with `<Cmd>`, you can use `prefix` to change it to `:`
 for example.
 
 Fields: ~
     • {type} `(optional)` `('normal' | 'count' | 'range')`
         Command type (default: `'normal'`)
     • {prefix} `(optional)` `(string)`
-        Prefix to prepend the command with (default: `'<CR>'`)
+        Prefix to prepend the command with (default: `'<Cmd>'`)
 
 ------------------------------------------------------------------------------
 mk_cmd({cmd}, {opts})                                   *dot_repeat-nvim.mk_cmd*

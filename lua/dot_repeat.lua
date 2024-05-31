@@ -183,7 +183,9 @@ local repeat_cmd_range = function(opts)
                 0, '>', line2, api.nvim_buf_get_mark(0, '>')[2], {}
             )
 
-            vim.cmd({ cmd = cmd, args = opts.fargs, range = { line1, line2 } })
+            api.nvim_cmd(
+                { cmd = cmd, args = opts.fargs, range = { line1, line2 } }, {}
+            )
         end
     )
 end
@@ -199,13 +201,13 @@ local commands = {
 --- If the command needs to handle range or count, set `type` to `'range'` or `'count'`
 --- respectively.
 ---
---- By default the mapping starts with `<CR>`, you can use `prefix` to change it to `:`
+--- By default the mapping starts with `<Cmd>`, you can use `prefix` to change it to `:`
 --- for example.
 ---@class dot_repeat-nvim.MkCmdOpts
 ---@field type? ('normal' | 'count' | 'range')
 --- Command type (default: `'normal'`)
 ---@field prefix? string
---- Prefix to prepend the command with (default: `'<CR>'`)
+--- Prefix to prepend the command with (default: `'<Cmd>'`)
 
 --- Make a command, that can be used as right side of a mapping.
 ---
